@@ -1,3 +1,11 @@
+String tableName = "NotesTable";
+
+class NotesTable {
+  static String columnTitle = "title";
+  static String columnDescription = "description";
+  static String columnId = "id";
+}
+
 class Notes {
   String? title;
   String? description;
@@ -11,7 +19,7 @@ class Notes {
     id = data["id"];
   }
 
-  Map toMap() {
+  Map<String, dynamic> toMap() {
     Map<String, dynamic> data = {};
     data["title"] = title;
     data["description"] = description;
