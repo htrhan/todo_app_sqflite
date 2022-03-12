@@ -58,8 +58,7 @@ CREATE TABLE $tableName(
 
   Future<int?> deleteNotes(int id) async {
     final db = await instance.database;
-    final result =
-        await db?.delete(tableName, where: "columnId=?", whereArgs: [id]);
+    final result = await db?.rawDelete("delete from $tableName where id=$id");
 
     return result;
   }
